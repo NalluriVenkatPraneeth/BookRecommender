@@ -134,7 +134,7 @@
 									{% if images[i]=="" -%}
 									<img src="{{url_for('static',filename='images/not.jpg')}}" alt="#">
 									{% else -%}
-									<img src="{{url_for('static',filename='')}}{{i}}.jpg" alt="#">
+									<img src="{{images[i]}}" alt="#">
 									{% endif %}
 								</figure>
 								<div class="movie-title"><a href="single.html">{{titles[i]}}</a></div>

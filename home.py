@@ -24,8 +24,8 @@ def home(pageno=1):
         #print(images[i])
         urllib.request.urlretrieve(
             images[i],
-            "pic.png")
-        img = Image.open("pic.png")
+            "static\\"+str(i)+'.jpg')
+        img = Image.open('static\\'+str(i)+'.jpg')
         if img.size==(1,1):
             images[i]=""
 
