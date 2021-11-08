@@ -138,24 +138,24 @@ def single(title):
             recom = recom.append({'img_l':dat['img_l'][i],'book_title':dat['book_title'][i],'isbn':dat['isbn'][i]},ignore_index=True)
 
     dat = recom
-    images = dat['img_l'].values
-    titles = dat['book_title'].values
-    alltitles = np.array(dat['book_title'].values)
+    images1 = dat['img_l'].values
+    titles1 = dat['book_title'].values
+    alltitles1 = np.array(dat['book_title'].values)
     for i in range(len(dat)):
         #print(images[i])
         try:
             urllib.request.urlretrieve(
-                images[i],
+                images1[i],
                 "static\\"+str(i)+'.jpg')
             img = Image.open('static\\'+str(i)+'.jpg')
             if img.size==(1,1):
-                images[i]=""
+                images1[i]=""
         except:
             print("Hello")
-    lenn = len(images)
-    titlelen = len(alltitles)
-    print(titlelen)
-    return render_template("single.html",title=title,images=images,titles=titles,lenn=lenn,titlelen=titlelen,alltitles=alltitles)
+    lenn1 = len(images1)
+    titlelen1 = len(alltitles1)
+    print(titlelen1)
+    return render_template("single.html",title=title,images=images1,titles=titles1,lenn=lenn1,titlelen=titlelen1,alltitles=alltitles1)
 
 if __name__=='__main__':
     app.run(debug=True)
